@@ -1,0 +1,22 @@
+<div fxLayout>
+  <div fxLayout="column" fxFlex="100" fxLayoutGap="2%">
+    <div></div>
+    <app-search></app-search>
+  </div>
+</div>
+<mat-divider></mat-divider>
+<br>
+<div fxLayout fxFill fxLayoutGap="3%" fxLayoutAlign="center">
+  <div fxLayout="column" fxFlex="33.33%" fxLayoutGap="1.5%">
+    <h3 fxFlexAlign="center"><strong>From your lecture videos</strong></h3>
+    <app-video-results class="results-column"></app-video-results>
+  </div>
+  <div fxLayout="column" fxFlex="33.33%" fxLayoutGap="1.5%">
+    <h3 fxFlexAlign="center"><strong>Quick results from the internet</strong></h3>
+    <app-internet-results class="results-column"></app-internet-results>
+  </div>
+  <div fxLayout="column" fxFlex="33.33%" fxLayoutGap="1.5%">
+    <h3 fxFlexAlign="center"><strong>Curated from Youtube</strong></h3>
+    <app-youtube-results class="results-column"></app-youtube-results>
+  </div>
+</div>
