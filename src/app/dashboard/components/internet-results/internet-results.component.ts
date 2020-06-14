@@ -8,6 +8,7 @@ import { SearchResultsService } from '../../services/search-results.service';
 })
 export class InternetResultsComponent {
 
+  public webResults = [];
   private results: SearchResultsService;
 
   constructor(results: SearchResultsService) {
@@ -17,7 +18,9 @@ export class InternetResultsComponent {
 
   private subscribeToResults(): void {
     this.results.resultSub.subscribe((res: any) => {
-
+      if (res?.data?.webResults) {
+        this.webResults = res?.data?.webResults;
+      }
     });
   }
 }

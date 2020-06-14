@@ -8,7 +8,7 @@ import { SearchResultsService } from '../../services/search-results.service';
 })
 export class VideoResultsComponent {
 
-  public videos: [] = [];
+  public videos = [];
   private results: SearchResultsService;
 
   constructor(results: SearchResultsService) {
@@ -20,7 +20,6 @@ export class VideoResultsComponent {
     this.results.resultSub.subscribe((res: any) => {
       if (res?.data?.lectureVideos) {
         this.videos = res?.data?.lectureVideos;
-        console.log(this.videos);
       }
     });
   }

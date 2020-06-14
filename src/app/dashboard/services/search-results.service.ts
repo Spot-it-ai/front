@@ -27,6 +27,7 @@ export class SearchResultsService {
     this.http.get(environment.hostUrl + this.RESULTS_ENDPOINT + query)
     .subscribe((res: any) => {
       if (res?.meta?.code === 200) {
+        console.log(res);
         this.resultSub.next(res);
       } else {
           // notify the user
