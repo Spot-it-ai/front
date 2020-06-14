@@ -1,84 +1,17 @@
 <div fxLayout="column" fxLayoutGap="1.5%">
-  <mat-card>
+  <mat-card *ngFor="let video of videos">
     <p>
-      <iframe height="300" src="https://www.youtube.com/embed/Ea3aoACnbEk" frameborder="0" allowfullscreen></iframe>
+      <iframe height="300" [src]='"https://www.youtube.com/embed/" + video.id | safeUrl' frameborder="0" allowfullscreen></iframe>
     </p>
-    <mat-chip-list>
-      <mat-chip>
-        <a href="#">1:30</a>
-      </mat-chip>
-      <mat-chip>
-        <a href="#">1:30</a>
-      </mat-chip>
-      <mat-chip>
-        <a href="#">1:30</a>
+    <mat-chip-list *ngIf="!video.isWatchFull">
+      <mat-chip *ngFor="let time of video.startTimes">
+        <a href='{{ video.url + "&t=" + time.split(".")[0]}}' target="_blank">
+          {{ time.split(".")[0] * 1000 | date: "mm:ss" }}
+        </a>
       </mat-chip>
     </mat-chip-list>
-  </mat-card>
-  <mat-card>
-    <p>
-      <iframe height="300" src="https://www.youtube.com/embed/Ea3aoACnbEk" frameborder="0" allowfullscreen></iframe>
-    </p>
-    <mat-chip-list>
-      <mat-chip>
-        <a href="#">1:30</a>
-      </mat-chip>
-      <mat-chip>
-        <a href="#">1:30</a>
-      </mat-chip>
-      <mat-chip>
-        <a href="#">1:30</a>
-      </mat-chip>
+    <mat-chip-list *ngIf="video.isWatchFull">
+        <mat-chip color="accent" selected>Watch Full</mat-chip>
     </mat-chip-list>
   </mat-card>
-  <mat-card>
-    <p>
-      <iframe height="300" src="https://www.youtube.com/embed/Ea3aoACnbEk" frameborder="0" allowfullscreen></iframe>
-    </p>
-    <mat-chip-list>
-      <mat-chip>
-        <a href="#">1:30</a>
-      </mat-chip>
-      <mat-chip>
-        <a href="#">1:30</a>
-      </mat-chip>
-      <mat-chip>
-        <a href="#">1:30</a>
-      </mat-chip>
-    </mat-chip-list>
-  </mat-card>
-  <mat-card>
-    <p>
-      <iframe height="300" src="https://www.youtube.com/embed/Ea3aoACnbEk" frameborder="0" allowfullscreen></iframe>
-    </p>
-    <mat-chip-list>
-      <mat-chip>
-        <a href="#">1:30</a>
-      </mat-chip>
-      <mat-chip>
-        <a href="#">1:30</a>
-      </mat-chip>
-      <mat-chip>
-        <a href="#">1:30</a>
-      </mat-chip>
-    </mat-chip-list>
-  </mat-card>
-  <mat-card>
-    <p>
-      <iframe height="300" src="https://www.youtube.com/embed/Ea3aoACnbEk" frameborder="0" allowfullscreen></iframe>
-    </p>
-    <mat-chip-list>
-      <mat-chip>
-        <a href="#">1:30</a>
-      </mat-chip>
-      <mat-chip>
-        <a href="#">1:30</a>
-      </mat-chip>
-      <mat-chip>
-        <a href="#">1:30</a>
-      </mat-chip>
-    </mat-chip-list>
-  </mat-card>
-
-
 </div>

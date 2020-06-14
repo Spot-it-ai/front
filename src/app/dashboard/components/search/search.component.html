@@ -2,10 +2,16 @@
   <div fxLayout="column" fxFlex="30">
     <mat-form-field>
       <mat-label>Search</mat-label>
-      <input matInput type="text" class="search-box" placeholder="Ex. What is indexing in databases?">
+      <input
+      matInput
+      type="text"
+      class="search-box"
+      [(ngModel)]="query"
+      name="query"
+      placeholder="Ex. What is indexing in databases?">
     </mat-form-field>
   </div>
   <div fxLayout="column" fxFlex="8">
-    <button mat-raised-button color="primary">Spot It </button>
+    <button mat-raised-button color="primary" (click)="onSubmit()">Spot It </button>
   </div>
 </div>

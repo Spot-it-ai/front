@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
@@ -13,6 +14,7 @@ import { SearchComponent } from './components/search/search.component';
 import { VideoResultsComponent } from './components/video-results/video-results.component';
 import { YoutubeResultsComponent } from './components/youtube-results/youtube-results.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
+import { SafeUrlPipe } from './pipes/safe-url.pipe';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,11 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     VideoResultsComponent,
     InternetResultsComponent,
     YoutubeResultsComponent,
+    SafeUrlPipe,
   ],
   imports: [
     CommonModule,
+    FormsModule,
     DashboardRoutingModule,
     FlexLayoutModule,
 

@@ -1,15 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { SearchResultsService } from '../../services/search-results.service';
 
 @Component({
   selector: 'app-internet-results',
   templateUrl: './internet-results.component.html',
-  styleUrls: ['./internet-results.component.scss']
+  styleUrls: ['./internet-results.component.scss'],
 })
-export class InternetResultsComponent implements OnInit {
+export class InternetResultsComponent {
 
-  constructor() { }
+  private results: SearchResultsService;
 
-  ngOnInit(): void {
+  constructor(results: SearchResultsService) {
+    this.results = results;
+    this.subscribeToResults();
   }
 
+  private subscribeToResults(): void {
+    this.results.resultSub.subscribe((res: any) => {
+
+    });
+  }
 }
