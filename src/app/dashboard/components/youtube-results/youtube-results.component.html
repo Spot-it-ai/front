@@ -1,115 +1,17 @@
 <div fxLayout="column" fxLayoutGap="1.5%">
-  <a href="#">
-    <mat-card fxLayout fxLayoutGap="1%">
+  <a [href]="video.url" target="_blank" *ngFor="let video of videos">
+    <mat-card fxLayout fxLayoutGap="1.5%">
       <div fxLayout="column" fxFlex="30">
-        <img src="./assets/img/thumb.png" alt="">
+        <img [src]="video?.thumbnails?.default?.url" [alt]="video.title">
       </div>
       <div fxLayout="column" fxFlex="80">
         <h4>
-          GOTO 2019 • "Good Enough" Architecture • Stefan Tilkov
+          {{ video.title }}
           <br>
-          <span class="gray"><small>GOTO Conferences</small></span>
+          <span class="gray"><small>{{ video.channelName }}</small></span>
         </h4>
-        <p>This presentation was recorded at GOTO Berlin 2019. #GOTOcon #GOTOber</p>
+        <p>{{ video.description }}</p>
       </div>
     </mat-card>
   </a>
-
-  <a href="#">
-    <mat-card fxLayout fxLayoutGap="1%">
-      <div fxLayout="column" fxFlex="30">
-        <img src="./assets/img/thumb.png" alt="">
-      </div>
-      <div fxLayout="column" fxFlex="80">
-        <h4>
-          GOTO 2019 • "Good Enough" Architecture • Stefan Tilkov
-          <br>
-          <span class="gray"><small>GOTO Conferences</small></span>
-        </h4>
-        <p>This presentation was recorded at GOTO Berlin 2019. #GOTOcon #GOTOber</p>
-      </div>
-    </mat-card>
-  </a>
-
-  <a href="#">
-    <mat-card fxLayout fxLayoutGap="1%">
-      <div fxLayout="column" fxFlex="30">
-        <img src="./assets/img/thumb.png" alt="">
-      </div>
-      <div fxLayout="column" fxFlex="80">
-        <h4>
-          GOTO 2019 • "Good Enough" Architecture • Stefan Tilkov
-          <br>
-          <span class="gray"><small>GOTO Conferences</small></span>
-        </h4>
-        <p>This presentation was recorded at GOTO Berlin 2019. #GOTOcon #GOTOber</p>
-      </div>
-    </mat-card>
-  </a>
-
-  <a href="#">
-    <mat-card fxLayout fxLayoutGap="1%">
-      <div fxLayout="column" fxFlex="30">
-        <img src="./assets/img/thumb.png" alt="">
-      </div>
-      <div fxLayout="column" fxFlex="80">
-        <h4>
-          GOTO 2019 • "Good Enough" Architecture • Stefan Tilkov
-          <br>
-          <span class="gray"><small>GOTO Conferences</small></span>
-        </h4>
-        <p>This presentation was recorded at GOTO Berlin 2019. #GOTOcon #GOTOber</p>
-      </div>
-    </mat-card>
-  </a>
-
-  <a href="#">
-    <mat-card fxLayout fxLayoutGap="1%">
-      <div fxLayout="column" fxFlex="30">
-        <img src="./assets/img/thumb.png" alt="">
-      </div>
-      <div fxLayout="column" fxFlex="80">
-        <h4>
-          GOTO 2019 • "Good Enough" Architecture • Stefan Tilkov
-          <br>
-          <span class="gray"><small>GOTO Conferences</small></span>
-        </h4>
-        <p>This presentation was recorded at GOTO Berlin 2019. #GOTOcon #GOTOber</p>
-      </div>
-    </mat-card>
-  </a>
-
-  <a href="#">
-    <mat-card fxLayout fxLayoutGap="1%">
-      <div fxLayout="column" fxFlex="30">
-        <img src="./assets/img/thumb.png" alt="">
-      </div>
-      <div fxLayout="column" fxFlex="80">
-        <h4>
-          GOTO 2019 • "Good Enough" Architecture • Stefan Tilkov
-          <br>
-          <span class="gray"><small>GOTO Conferences</small></span>
-        </h4>
-        <p>This presentation was recorded at GOTO Berlin 2019. #GOTOcon #GOTOber</p>
-      </div>
-    </mat-card>
-  </a>
-
-  <a href="#">
-    <mat-card fxLayout fxLayoutGap="1%">
-      <div fxLayout="column" fxFlex="30">
-        <img src="./assets/img/thumb.png" alt="">
-      </div>
-      <div fxLayout="column" fxFlex="80">
-        <h4>
-          GOTO 2019 • "Good Enough" Architecture • Stefan Tilkov
-          <br>
-          <span class="gray"><small>GOTO Conferences</small></span>
-        </h4>
-        <p>This presentation was recorded at GOTO Berlin 2019. #GOTOcon #GOTOber</p>
-      </div>
-    </mat-card>
-  </a>
-
-
 </div>

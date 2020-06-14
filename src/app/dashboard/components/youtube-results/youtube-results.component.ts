@@ -1,15 +1,27 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { SearchResultsService } from '../../services/search-results.service';
 
 @Component({
   selector: 'app-youtube-results',
   templateUrl: './youtube-results.component.html',
-  styleUrls: ['./youtube-results.component.scss']
+  styleUrls: ['./youtube-results.component.scss'],
 })
-export class YoutubeResultsComponent implements OnInit {
+export class YoutubeResultsComponent {
 
-  constructor() { }
+  public videos = [];
+  private results: SearchResultsService;
 
-  ngOnInit(): void {
+  constructor(results: SearchResultsService) {
+    this.results = results;
+    this.subscribeToResults();
+  }
+
+  private subscribeToResults(): void {
+    this.results.resultSub.subscribe((res: any) => {
+      if (res?.data?.youtubeResults) {
+        this.videos = res?.data?.youtubeResults;
+      }
+    });
   }
 
 }

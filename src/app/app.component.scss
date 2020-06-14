@@ -10,3 +10,44 @@ mat-toolbar {
   min-height: 48px;
   max-height: 48px !important;
 }
+
+.footer {
+  text-align: center;
+  margin-top: 50px;
+
+  a {
+    text-decoration: none;
+  }
+
+  // @ref: https://css-tricks.com/hearts-in-html-and-css/
+  .heart {
+    background-color: red;
+    display: inline-block;
+    height: 18px;
+    margin: 0 10px;
+    position: relative;
+    top: 0;
+    transform: rotate(-45deg);
+    width: 18px;
+  }
+
+  .heart:before,
+  .heart:after {
+    content: "";
+    background-color: red;
+    border-radius: 50%;
+    height: 18px;
+    position: absolute;
+    width: 18px;
+  }
+
+  .heart:before {
+    top: -12px;
+    left: 0;
+  }
+
+  .heart:after {
+    left: 12px;
+    top: 0;
+  }
+}
