@@ -11,7 +11,7 @@ export class SearchResultsService {
   public resultSub = new Subject<any>();
   public results$: Observable<any>;
   private readonly RESULTS_ENDPOINT: string = '/api/search/?query=';
-  private readonly NEW_VIDEO_ENDPOINT: string = '/api/video-url';
+  private readonly VIDEO_ENDPOINT: string = '/api/video';
   private router: Router;
   private http: HttpClient;
   private query = '';
@@ -40,8 +40,13 @@ export class SearchResultsService {
     return this.query;
   }
 
+  public getAllVideos(): Observable<any> {
+    const endpoint = environment.hostUrl + this.VIDEO_ENDPOINT;
+    return this.http.get(endpoint);
+  }
+
   public addNewVideo(url: string, title: string): Observable<any> {
-    const endpoint = environment.hostUrl + this.NEW_VIDEO_ENDPOINT;
+    const endpoint = environment.hostUrl + this.VIDEO_ENDPOINT;
     const body = {
       title,
       url,

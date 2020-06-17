@@ -17,6 +17,7 @@ import { VideoResultsComponent } from './components/video-results/video-results.
 import { YoutubeResultsComponent } from './components/youtube-results/youtube-results.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
+import { ShowAllVideosComponent } from './components/show-all-videos/show-all-videos.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
     YoutubeResultsComponent,
     SafeUrlPipe,
     AddVideoComponent,
+    ShowAllVideosComponent,
   ],
   imports: [
     CommonModule,
