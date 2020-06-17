@@ -1,0 +1,31 @@
+<div fxLayout="row" fxLayoutAlign="center" fxFill fxLayoutGap="1%">
+  <div fxLayout="column" fxFlex="30">
+    <mat-form-field>
+      <mat-label>Title of the video</mat-label>
+      <input
+      matInput
+      type="text"
+      [(ngModel)]="title"
+      name="title"
+      autocomplete="off"
+      placeholder="Ex. Kafka: A Modern Distributed System">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Video URL</mat-label>
+      <input
+      matInput
+      type="text"
+      [(ngModel)]="url"
+      name="url"
+      autocomplete="off"
+      placeholder="Ex. https://www.youtube.com/watch?v=Ea3aoACnbEk">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="isDisabled">Add Video</button>
+    <div *ngIf="failed" class="error">
+      {{ msg }}
+    </div>
+    <div *ngIf="success" class="success">
+      {{ msg }}
+    </div>
+  </div>
+</div>

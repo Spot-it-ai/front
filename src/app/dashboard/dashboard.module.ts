@@ -7,6 +7,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatInputModule } from '@angular/material/input';
+import { MatTabsModule } from '@angular/material/tabs';
+import { AddVideoComponent } from './components/add-video/add-video.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { InternetResultsComponent } from './components/internet-results/internet-results.component';
 import { ResultsComponent } from './components/results/results.component';
@@ -25,6 +27,7 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
     InternetResultsComponent,
     YoutubeResultsComponent,
     SafeUrlPipe,
+    AddVideoComponent,
   ],
   imports: [
     CommonModule,
@@ -38,6 +41,7 @@ import { SafeUrlPipe } from './pipes/safe-url.pipe';
     MatDividerModule,
     MatCardModule,
     MatChipsModule,
+    MatTabsModule,
   ],
 })
 export class DashboardModule { }
