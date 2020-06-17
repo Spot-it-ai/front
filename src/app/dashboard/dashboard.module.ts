@@ -13,11 +13,11 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { InternetResultsComponent } from './components/internet-results/internet-results.component';
 import { ResultsComponent } from './components/results/results.component';
 import { SearchComponent } from './components/search/search.component';
+import { ShowAllVideosComponent } from './components/show-all-videos/show-all-videos.component';
 import { VideoResultsComponent } from './components/video-results/video-results.component';
 import { YoutubeResultsComponent } from './components/youtube-results/youtube-results.component';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { SafeUrlPipe } from './pipes/safe-url.pipe';
-import { ShowAllVideosComponent } from './components/show-all-videos/show-all-videos.component';
 
 @NgModule({
   declarations: [
