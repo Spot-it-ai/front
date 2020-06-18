@@ -22,6 +22,11 @@ export class SearchResultsService {
     this.results$ = this.resultSub.asObservable();
   }
 
+  public deleteVideo(id: string): Observable<any> {
+    const endpoint = environment.hostUrl + this.VIDEO_ENDPOINT + '/' + id;
+    return this.http.delete(endpoint);
+  }
+
   public getResults(query: string): void {
     this.router.navigate(['/dash/results']);
     this.query = query;
