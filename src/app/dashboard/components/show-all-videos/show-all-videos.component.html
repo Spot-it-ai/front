@@ -1,3 +1,6 @@
+<div fxLayout="row" fxLayoutAlign="end end">
+  <button mat-raised-button color="primary" class="refresh" (click)="getAllVideos()">Refresh</button>
+</div>
 <h1 *ngIf="noVideos"></h1>
 <div *ngFor="let video of videos; let i = index">
   <div fxLayout="row" fxLayoutGap="1.5%" *ngIf="i % 3 === 0" class="row">

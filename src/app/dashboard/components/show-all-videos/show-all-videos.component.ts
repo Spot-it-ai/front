@@ -26,4 +26,8 @@ export class ShowAllVideosComponent implements OnInit {
       }
     });
   }
+
+  public getAllVideos(): void {
+    this.ngOnInit();
+  }
 }

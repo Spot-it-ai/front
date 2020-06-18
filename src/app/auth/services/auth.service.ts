@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
@@ -8,16 +8,17 @@ import { environment } from 'src/environments/environment';
 })
 export class AuthService {
 
-  constructor(http: HttpClient) {
-    this.http = http;
-  }
-
+  public auth$: Observable<boolean>;
+  public authSub = new Subject<boolean>();
   private http: HttpClient;
   private loggedIn = false;
   private token: string;
   private readonly LOGIN_ENDPOINT: string = '/api/login';
 
-  public setLogged;
+  constructor(http: HttpClient) {
+    this.http = http;
+    this.auth$ = this.authSub.asObservable();
+  }
 
   public login(username: string, password: string): Observable<any> {
     const url = environment.hostUrl + this.LOGIN_ENDPOINT;
@@ -45,5 +46,11 @@ export class AuthService {
   public setToken(token: string): void {
     this.loggedIn = true;
     this.token = token;
+  }
+
+  public logout(): void {
+    this.token = null;
+    this.loggedIn = false;
+    this.authSub.next(false);
   }
 }

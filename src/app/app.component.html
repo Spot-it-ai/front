@@ -3,6 +3,7 @@
   <mat-toolbar-row>
     <span>spot.it</span>
     <span class="spacer"></span>
+    <button mat-button *ngIf="isLoggedIn" (click)="logout()">LogOut</button>
   </mat-toolbar-row>
 </mat-toolbar>
 

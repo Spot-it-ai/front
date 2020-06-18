@@ -30,6 +30,7 @@ export class LoginComponent {
           this.failed = false;
           const token = res?.data?.token;
           this.auth.setToken(token);
+          this.auth.authSub.next(true);
           this.router.navigate(['/dash']);
         } else {
           this.failed = true;
