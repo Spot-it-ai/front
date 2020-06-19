@@ -1,4 +1,8 @@
 <div fxLayout="column" fxLayoutGap="1.5%">
+  <div *ngIf="!resultsReady" fxLayout="column" fxLayoutGap="1.5%">
+    <mat-card class="animated-background" *ngFor="let c of placeholderCount"></mat-card>
+  </div>
+  
   <a [href]="video.url" target="_blank" *ngFor="let video of videos">
     <mat-card fxLayout fxLayoutGap="1.5%">
       <div fxLayout="column" fxFlex="30">

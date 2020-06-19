@@ -9,7 +9,9 @@ import { environment } from 'src/environments/environment';
 })
 export class SearchResultsService {
   public resultSub = new Subject<any>();
+  public apiCallInitiated$: Observable<boolean>;
   public results$: Observable<any>;
+  private apiCallInitiatedSub = new Subject<boolean>();
   private readonly RESULTS_ENDPOINT: string = '/api/search/?query=';
   private readonly VIDEO_ENDPOINT: string = '/api/video';
   private router: Router;
@@ -20,6 +22,7 @@ export class SearchResultsService {
     this.router = router;
     this.http = http;
     this.results$ = this.resultSub.asObservable();
+    this.apiCallInitiated$ = this.apiCallInitiatedSub.asObservable();
   }
 
   public deleteVideo(id: string): Observable<any> {
@@ -28,6 +31,7 @@ export class SearchResultsService {
   }
 
   public getResults(query: string): void {
+    this.apiCallInitiatedSub.next(true);
     this.router.navigate(['/dash/results']);
     this.query = query;
     this.http.get(environment.hostUrl + this.RESULTS_ENDPOINT + query)

@@ -1,7 +1,7 @@
 <!-- Toolbar -->
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>spot.it</span>
+    <a [routerLink]="['dash']">spot.it</a>
     <span class="spacer"></span>
     <button mat-button *ngIf="isLoggedIn" (click)="logout()">LogOut</button>
   </mat-toolbar-row>
