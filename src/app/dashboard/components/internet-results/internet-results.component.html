@@ -1,8 +1,8 @@
-<div fxLayout="column" fxLayoutGap="1.5%">
-  <div *ngIf="!resultsReady" fxLayout="column" fxLayoutGap="1.5%">
-    <mat-card class="animated-background" *ngFor="let c of placeholderCount"></mat-card>
-  </div>
-  
+<div *ngIf="!resultsReady" fxLayout="column" fxLayoutGap="1.5%">
+  <mat-card class="animated-background" *ngFor="let c of placeholderCount"></mat-card>
+</div>
+
+<div *ngIf="resultsReady" fxLayout="column" fxLayoutGap="1.5%">
   <a href="{{ result.url }}" *ngFor="let result of webResults" target="_blank">
     <mat-card>
       <h2>{{ result.title }}</h2>
