@@ -5,8 +5,8 @@
     </p>
     <mat-chip-list *ngIf="!video.isWatchFull">
       <mat-chip *ngFor="let time of video.startTimes">
-        <a href='{{ video.url + "&t=" + time.split(".")[0]}}' target="_blank">
-          {{ time.split(".")[0] * 1000 | date: "mm:ss" }}
+        <a href='{{ video.url + "&t=" + time }}' target="_blank">
+          {{ time * 1000 | date: "mm:ss" }}
         </a>
       </mat-chip>
     </mat-chip-list>
